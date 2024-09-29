@@ -24,7 +24,9 @@ sed -i 's/192.168.1.1/192.168.68.10/g' package/base-files/files/bin/config_gener
 #
 # Add luci-app-amlogic
 #svn co https://github.com/ophub/luci-app-amlogic package/luci-app-amlogic
-svn co https://github.com/ophub/luci-app-amlogic package/luci-app-amlogic
+svn co https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
+#git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
+
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
