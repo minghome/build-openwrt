@@ -24,9 +24,13 @@ sed -i 's/192.168.1.1/192.168.68.10/g' package/base-files/files/bin/config_gener
 #
 # Add luci-app-amlogic
 #svn co https://github.com/ophub/luci-app-amlogic package/luci-app-amlogic
-svn co https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
-#git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 
+#git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
+# 晶晨宝盒
+git_sparse_clone main https://github.com/ophub/luci-app-amlogic luci-app-amlogic
+sed -i "s|firmware_repo.*|firmware_repo 'https://github.com/haiibo/OpenWrt'|g" package/luci-app-amlogic/root/etc/config/amlogic
+# sed -i "s|kernel_path.*|kernel_path 'https://github.com/ophub/kernel'|g" package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|ARMv8|ARMv8_PLUS|g" package/luci-app-amlogic/root/etc/config/amlogic
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
