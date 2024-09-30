@@ -142,6 +142,7 @@ on:
           - 5.10.1
           - 5.15.1
           - 6.1.1
+          - 6.6.50
       auto_kernel:
         description: "Auto use the latest kernel"
         required: false
@@ -237,7 +238,7 @@ jobs:
               TAGS_NAME="immortalwrt"
           elif [[ "${{ inputs.source_branch }}" == *"Lienol"* ]]; then
               REPO_URL="https://github.com/Lienol/openwrt"
-              REPO_BRANCH="22.03"
+              REPO_BRANCH="23.05"
               TAGS_NAME="Lienol"
           else
               echo "Unknown source code repository."
@@ -347,7 +348,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           body: |
             ### OpenWrt Image information
-            - Default IP: 192.168.1.1
+            - Default IP: 192.168.68.10
             - Default username: root
             - Default password: password
             - Default WIFI name: OpenWrt
